@@ -4,21 +4,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const { connectMongoDB } = require('./connect');
+const { createItem } = require("./models/create-item");
 
 app.use(cors());
 app.use(express.json())
 
-//Test
-start();
-const newInventory =  {
-	productId: 1,
-    Title: "Waffle Maker",
-    Price: 19.99,
-    Discount: 15,
-    Quantity: 10
-}
-//background math = price * (1 - 15*0.01),
-createNewItem(newInventory);
+
 
 //Home Route
 /*app.get('/inventory', async (req, res) => {
@@ -47,4 +38,15 @@ const start = async () => {
     }
 }
 
-//start();
+start();
+
+//Test
+const newInventory =  {
+	productId: 1,
+    Title: "Waffle Maker",
+    Price: 19.99,
+    Discount: 15,
+    Quantity: 10
+}
+//background math = price * (1 - 15*0.01),
+createItem(newInventory);
