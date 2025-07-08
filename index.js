@@ -7,6 +7,7 @@ const { connectMongoDB } = require('./connect');
 const { createItem } = require("./models/create-item");
 const { updateParam } = require('./models/update-item');
 const { getItem, getAllItems } = require('./models/read-item');
+const { deleteItem } = require('./models/delete-item');
 
 app.use(cors());
 app.use(express.json())
