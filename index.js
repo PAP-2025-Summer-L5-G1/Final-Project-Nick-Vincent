@@ -41,7 +41,9 @@ const start = async () => {
 start();
 
 //Test
-const newInventory =  {
+
+
+/*const newInventory =  {
 	productId: 1,
     Title: "Waffle Maker",
     Price: 19.99,
@@ -49,4 +51,4 @@ const newInventory =  {
     Quantity: 10
 }
 //background math = price * (1 - 15*0.01),
-createItem(newInventory);
+createItem(newInventory);*/
