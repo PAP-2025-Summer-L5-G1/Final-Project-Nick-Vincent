@@ -4,6 +4,7 @@ const {ObjectId} = require('mongodb')//
 async function updateParam(itemId, updatedItem) {
     // updateParam(1, Discount, 20) option 2
     const db = getCollection();
+    itemId = parseInt(itemId);
     //const documentId = ObjectId.createFromHexString(itemId)
     try {
         const results = await db.updateOne(
