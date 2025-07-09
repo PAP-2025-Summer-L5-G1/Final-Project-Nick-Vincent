@@ -1,5 +1,6 @@
 const {getCollection} = require('../connect');
 
+// Accepts deleteItem({field : value})
 async function deleteItem(field, value) {
     try {
         const db = getCollection()

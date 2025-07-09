@@ -23,40 +23,23 @@ app.get('/inventory', async (req, res) => {
 
 //Subroute
 app.post('/inventory', async (req, res) => {
-    const newMessage = req.body;
-    await createItem(newMessage);
+    const newItem = req.body;
+    await createItem(newItem);
     res.sendStatus(201)
     console.log("POST request received on inventory route, Item Created")
 });
 
 //Dynamic Route
 app.patch('/inventory/:id', async (req,res) => {
+    console.log("flag")
     const editedItem = req.body;
-    const result = await updateMessage(req.params.id, editedItem);
+    const result = await updateParam(req.params.id, editedItem);
     res.sendStatus(200);
 })
 
-app.patch('/inventory/:Title', async (req,res) => {
-    const editedItem = req.body;
-    const result = await updateMessage(req.params.title, editedMessage);
-    res.sendStatus(200);
-})
-
-app.patch('/inventory/:Price', async (req,res) => {
-    const editedItem = req.body;
-    const result = await updateMessage(req.params.price, editedMessage);
-    res.sendStatus(200);
-})
-
-app.patch('/inventory/:Discount', async (req,res) => {
-    const editedItem = req.body;
-    const result = await updateMessage(req.params.discount, editedMessage);
-    res.sendStatus(200);
-})
-
-app.patch('/inventory/:Quantity', async (req,res) => {
-    const editedItem = req.body;
-    const result = await updateMessage(req.params.quantity, editedMessage);
+app.delete('/inventory/:id', async (req,res) => {
+    console.log("flag")
+    const result = await deleteItem("productId", parseInt(req.params.id));
     res.sendStatus(200);
 })
 
