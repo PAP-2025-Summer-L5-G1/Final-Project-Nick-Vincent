@@ -15,15 +15,34 @@ app.use(express.json())
 
 
 //Home Route
-/*app.get('/inventory', async (req, res) => {
-    const results = await getAllMessages(req.params.secret)
+app.get('/inventory', async (req, res) => {
+    const results = await getAllItems()
     res.send(results)
     console.log("GET request received on homepage")
-});*/
+});
 
 //Subroute
+app.post('/inventory', async (req, res) => {
+    const newItem = req.body;
+    await createItem(newItem);
+    res.sendStatus(201)
+    console.log("POST request received on inventory route, Item Created")
+});
 
 //Dynamic Route
+app.patch('/inventory/:id', async (req,res) => {
+    console.log("flag")
+    const editedItem = req.body;
+    const result = await updateParam(req.params.id, editedItem);
+    res.sendStatus(200);
+})
+
+app.delete('/inventory/:id', async (req,res) => {
+    console.log("flag")
+    const result = await deleteItem("productId", parseInt(req.params.id));
+    res.sendStatus(200);
+})
+
 
 /* Exercise 5 
 const { updateMessage } = require('./models/update-message');
@@ -44,7 +63,7 @@ const start = async () => {
 start();
 
 //Test
-
+//deleteItem("productId", 2);
 
 /*const newInventory =  {
 	productId: 2,
