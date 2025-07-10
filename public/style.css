@@ -22,7 +22,7 @@ body>header {
     align-items: center;
 
     #branding>#logo,
-    #branding>#title {
+    #branding>#nav-name {
         margin: 0;
         display: inline-block;
         vertical-align: middle;
@@ -32,7 +32,7 @@ body>header {
         width: 100px;
     }
 
-    #title {
+    #nav-name {
         padding: 0.7rem 1.5rem;
         color: #fff;
         font-weight: 400;
@@ -68,8 +68,8 @@ body>main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    flex-direction: row;
-    max-width: 1200px;
+    flex-direction: column;
+    /* max-width: 90%; */
 }
 
 #show-secret {
@@ -79,10 +79,10 @@ body>main {
 
 main>section {
     margin: 3rem auto;
-    padding: 2rem 3rem;
-    width: 60%;
-    max-width: 700px;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* padding: 2rem 3rem; */
+    width: 100%;
+    max-width: 100%;
+    /* background-color: rgba(255, 255, 255, 0.9); */
     border-radius: 20px;
 }
 
@@ -158,6 +158,49 @@ h4 {
     display: none;
 }
 
+/* vincent's code */
+.item {
+    background-color: rgb(100, 64, 38);
+    /* border-radius: 5%; */
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    padding: 2%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* optional: space between items */
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+
+.meta > p {
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+
+span {
+    color: rgb(87, 221, 10);
+    font-weight: bold;
+}
+
+#create-form {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#create-form input:not([type="submit"]) {
+    height: 2.2em;
+}
+
 /*============Icon color adjustments Pico v2============*/
 
 .message button svg {
@@ -182,6 +225,9 @@ h4 {
 
 #form-btn {
     margin-top: 30px;
+    height: 3em;
+    font-weight: bold;
+    width: 40%;
 }
 
 /*================= Secret messages should each have a class, so they can be styled differently and shown in among the regular messages 
@@ -209,8 +255,8 @@ h4 {
     }
 
     main>section {
-        width: 100%;
-        padding: 5%;
+        /* width: 100%; */
+        /* padding: 5%; */
     }
     main>aside {
         width: 90%;
