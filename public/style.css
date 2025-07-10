@@ -22,7 +22,7 @@ body>header {
     align-items: center;
 
     #branding>#logo,
-    #branding>#title {
+    #branding>#nav-name {
         margin: 0;
         display: inline-block;
         vertical-align: middle;
@@ -32,7 +32,7 @@ body>header {
         width: 100px;
     }
 
-    #title {
+    #nav-name {
         padding: 0.7rem 1.5rem;
         color: #fff;
         font-weight: 400;

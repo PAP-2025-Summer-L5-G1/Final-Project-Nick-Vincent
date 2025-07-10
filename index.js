@@ -18,7 +18,7 @@ app.use(express.json())
 app.get('/inventory', async (req, res) => {
     const results = await getAllItems()
     res.send(results)
-    console.log("GET request received on homepage")
+    // console.log("GET request received on homepage")
 });
 
 //Subroute
@@ -39,7 +39,8 @@ app.patch('/inventory/:id', async (req,res) => {
 
 app.delete('/inventory/:id', async (req,res) => {
     console.log("flag")
-    const result = await deleteItem("productId", parseInt(req.params.id));
+    const productId = req.params.id;
+    const result = await deleteItem(productId);
     res.sendStatus(200);
 })
 
