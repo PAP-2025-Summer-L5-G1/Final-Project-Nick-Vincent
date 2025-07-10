@@ -201,6 +201,10 @@ span {
     height: 2.2em;
 }
 
+.edit-item {
+    display: none;
+}
+
 /*============Icon color adjustments Pico v2============*/
 
 .message button svg {
